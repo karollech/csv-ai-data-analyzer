@@ -127,7 +127,7 @@ def get_chatbot_reply(user_prompt, memory, openai_api_key, df):
         }
 
 # Main
-st.title("CSV Data Analyzer")
+st.title("CSV AI Data Analyzer")
 st.subheader("for imprv.ai, v1.0 by label_it")
 
 # Initialize session state for messages
