@@ -2,23 +2,19 @@ import streamlit as st
 import pandas as pd
 import datetime
 import matplotlib.pyplot as plt
-import seaborn as sns  # type: ignore
+import seaborn as sns
 from openai import OpenAI
 from ydata_profiling import ProfileReport
 from streamlit.components.v1 import html
 
 # settings
-
 st.session_state['mydata'] = None
 uploaded_file = None
 st.set_page_config(layout="wide", page_title="CSV AI Data Analyzer", page_icon="📊", initial_sidebar_state="expanded")
 st.session_state.theme = "dark"
 MODEL = "gpt-3.5-turbo"  # Model to use for OpenAI API
 
-
-
 # functions
-
 def get_dataframe_summary(df):
     """Generuje podsumowanie dataframe'a dla AI"""
     summary = {
@@ -79,7 +75,6 @@ def describe_file_with_openai(df, openai_api_key):
     return response.choices[0].message.content.strip()
 
 def get_chatbot_reply(user_prompt, memory, openai_api_key, df):
-   
     try:
         # Generuj podsumowanie dataframe'a zamiast przekazywać całe dane
         df_summary = get_dataframe_summary(df)
@@ -132,16 +127,14 @@ def get_chatbot_reply(user_prompt, memory, openai_api_key, df):
         }
 
 # Main
-
 st.title("CSV Data Analyzer")
-st.subheader("for imprv.ai,  v1.0 by label_it")
+st.subheader("for imprv.ai, v1.0 by label_it")
 
 # Initialize session state for messages
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
 # sidebar
-
 with st.sidebar:
     # File uploader
     uploaded_file = st.sidebar.file_uploader("", type=["csv"])
