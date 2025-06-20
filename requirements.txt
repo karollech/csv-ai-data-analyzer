@@ -3,3 +3,4 @@ plotly
 streamlit
 seaborn
 ydata_profiling
+openai
