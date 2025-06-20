@@ -4,7 +4,6 @@ import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns  # type: ignore
 from openai import OpenAI
-from dotenv import dotenv_values
 from ydata_profiling import ProfileReport
 from streamlit.components.v1 import html
 
