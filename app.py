@@ -793,4 +793,3 @@ if uploaded_file is not None and st.session_state['mydata'] is not None:
                 st.rerun()
 else:
     st.info("Please upload a CSV file to start analyzing your data.")
->>>>>>> 8ad3223d2a3c6f10ffc195cb54051abef4ad8f40
